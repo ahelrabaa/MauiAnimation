@@ -16,7 +16,7 @@
 
             return Task.Run(() =>
             {
-                Device.BeginInvokeOnMainThread(() =>
+                Dispatcher.Dispatch(() =>
                 {
                     Target.Animate("Shake", Shake(), 16, Convert.ToUInt32(Duration));
                 });

@@ -16,7 +16,7 @@
 
             return Task.Run(() =>
             {
-                Device.BeginInvokeOnMainThread(() =>
+                Dispatcher.Dispatch(() =>
                 {
                     Target.Animate("Jump", Jump(), 16, Convert.ToUInt32(Duration));
                 });

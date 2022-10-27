@@ -30,7 +30,7 @@
 
             return Task.Run(() =>
             {
-                Device.BeginInvokeOnMainThread(() =>
+                Dispatcher.Dispatch(() =>
                 {
                     Target.Animate("Flip", Flip(), 16, Convert.ToUInt32(Duration));
                 });

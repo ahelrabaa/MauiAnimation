@@ -90,7 +90,7 @@
         {
             _animateTimerCancellationTokenSource = tokenSource;
 
-            Device.BeginInvokeOnMainThread(async () =>
+            Dispatcher.Dispatch(async () =>
             {
                 if (!_animateTimerCancellationTokenSource.IsCancellationRequested)
                 {

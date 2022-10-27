@@ -13,13 +13,7 @@
                 throw new NullReferenceException("Null Target property.");
             }
 
-            return Task.Run(() =>
-            {
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    Target.Animate("BounceIn", BounceIn(), 16, Convert.ToUInt32(Duration));
-                });
-            });
+            return Task.Run(() => Dispatcher.Dispatch(() => Target.Animate("BounceIn", BounceIn(), 16, Convert.ToUInt32(Duration))));
         }
 
         internal Animation BounceIn()
@@ -52,7 +46,7 @@
 
             return Task.Run(() =>
             {
-                Device.BeginInvokeOnMainThread(() =>
+                Dispatcher.Dispatch(() =>
                 {
                     Target.Animate("BounceOut", BounceOut(), 16, Convert.ToUInt32(Duration));
                 });

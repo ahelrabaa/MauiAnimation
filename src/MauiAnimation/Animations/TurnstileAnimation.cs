@@ -14,7 +14,7 @@
 
             return Task.Run(() =>
             {
-                Device.BeginInvokeOnMainThread(() =>
+                Dispatcher.Dispatch(() =>
                 {
                     Target.Animate("TurnstileIn", TurnstileIn(), 16, Convert.ToUInt32(Duration));
                 });
@@ -43,7 +43,7 @@
 
             return Task.Run(() =>
             {
-                Device.BeginInvokeOnMainThread(() =>
+                Dispatcher.Dispatch(() =>
                 {
                     Target.Animate("TurnstileOut", TurnstileOut(), 16, Convert.ToUInt32(Duration));
                 });

@@ -14,7 +14,7 @@
 
             return Task.Run(() =>
             {
-                Device.BeginInvokeOnMainThread(() =>
+                Dispatcher.Dispatch(() =>
                 {
                     Target.Animate("Hearth", Hearth(), 16, Convert.ToUInt32(Duration));
                 });
